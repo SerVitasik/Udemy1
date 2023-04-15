@@ -11,6 +11,11 @@ const EXPENSES = [
   { id: 'e5', title: 'Car Insurance6', amount: 5294.67, date: new Date(2022, 1, 25) },
 ];
 
+const USERS = [
+  { login: 'Yobik', password: '12345' },
+  { login: 'Yobik', password: '12345' },
+]
+
 function App() {
 
   let [expenses, setExpenses] = React.useState(EXPENSES);

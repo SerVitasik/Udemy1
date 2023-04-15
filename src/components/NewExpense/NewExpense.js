@@ -13,9 +13,20 @@ function NewExpense({ onAddExpense }) {
         onAddExpense(expenseData);
     }
 
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const onAddHandlerOpen = () => {
+        setIsOpen(true);
+    }
+
+    const onAddHandlerCancel = () => {
+        setIsOpen(false);
+    }
+
+
     return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+            {(isOpen === true) ? <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onAddHandlerCancel={onAddHandlerCancel} /> : <button onClick={onAddHandlerOpen}>Add New Expense</button>}
         </div>
     );
 }
